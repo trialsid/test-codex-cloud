@@ -43,13 +43,15 @@ export default function Header() {
           className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle navigation"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
         >
           {mobileOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white md:hidden">
+        <div id="mobile-navigation" className="border-t border-slate-200 bg-white md:hidden">
           <nav className="space-y-1 px-4 py-4 text-base font-medium text-slate-700">
             {navigation.map((item) => (
               <a

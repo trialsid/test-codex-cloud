@@ -52,13 +52,19 @@ export default function Header() {
         <div className="border-t border-slate-200 bg-white md:hidden">
           <nav className="space-y-1 px-4 py-4 text-base font-medium text-slate-700">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="block rounded-md px-3 py-2 hover:bg-slate-100">
+              <a
+                key={item.name}
+                href={item.href}
+                className="block rounded-md px-3 py-2 hover:bg-slate-100"
+                onClick={() => setMobileOpen(false)}
+              >
                 {item.name}
               </a>
             ))}
             <a
               href="#newsletter"
               className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-dark"
+              onClick={() => setMobileOpen(false)}
             >
               Subscribe
             </a>
